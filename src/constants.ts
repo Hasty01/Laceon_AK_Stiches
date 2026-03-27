@@ -251,14 +251,14 @@ export interface TeamMember {
 export const TEAM: TeamMember[] = [
   {
     id: 't1',
-    name: 'Annet Kyomuhendo',
+    name: 'Atwongyere Kate',
     role: 'Founder & Creative Director',
-    image: 'https://picsum.photos/seed/annet/400/500',
+    image: '/images/tm.jpg',
     bio: 'With over 15 years of experience in vintage restoration and bespoke tailoring, Annet leads our creative vision.',
     socials: {
       instagram: 'https://instagram.com/laceonak',
-      whatsapp: 'https://wa.me/256700000000',
-      gmail: 'mailto:annet@laceonak.com',
+      whatsapp: 'https://wa.me/+256760672702',
+      gmail: 'mailto:hastyjoel1@gmail.com',
       linkedin: 'https://linkedin.com/in/annetkyomuhendo'
     }
   },
@@ -266,7 +266,7 @@ export const TEAM: TeamMember[] = [
     id: 't2',
     name: 'Joel Hasty',
     role: 'Head of Operations',
-    image: 'https://picsum.photos/seed/joel/400/500',
+    image: 'images/joel.jpg',
     bio: 'Joel ensures that every piece in our collection is meticulously curated and delivered with care.',
     socials: {
       instagram: 'https://instagram.com/hastyjoel',
