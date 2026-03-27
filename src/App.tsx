@@ -11,6 +11,8 @@ import {
   Instagram, 
   Facebook, 
   Twitter,
+  Linkedin,
+  MessageCircle,
   ChevronRight,
   ArrowRight,
   Sun,
@@ -20,7 +22,7 @@ import {
   Ruler,
   Sparkles
 } from 'lucide-react';
-import { COLLECTION, CollectionItem, Feedback, SERVICES } from './constants';
+import { COLLECTION, CollectionItem, Feedback, SERVICES, TEAM, TeamMember } from './constants';
 
 interface CartItem extends CollectionItem {
   quantity: number;
@@ -75,6 +77,7 @@ const Navbar = ({
     { name: 'Home', href: '#home' },
     { name: 'Collection', href: '#collection' },
     { name: 'Services', href: '#services' },
+    { name: 'Team', href: '#team' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -539,6 +542,79 @@ const Shop = ({
   );
 };
 
+const Team = () => {
+  return (
+    <section id="team" className="py-24 bg-theme-section border-t border-gold/5">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-20">
+          <motion.span 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-gold uppercase tracking-[0.4em] text-xs mb-4 block"
+          >
+            The Artisans
+          </motion.span>
+          <h2 className="text-4xl md:text-6xl font-serif mb-6">Our Team</h2>
+          <div className="w-24 h-[1px] bg-gold mx-auto"></div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-12">
+          {TEAM.map((member, index) => (
+            <motion.div
+              key={member.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="group"
+            >
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] mb-8 border border-gold/10 shadow-2xl">
+                <LazyImage 
+                  src={member.image} 
+                  alt={member.name} 
+                  className="w-full h-full"
+                  imgClassName="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-night via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center p-8">
+                  <div className="flex gap-6">
+                    {member.socials.instagram && (
+                      <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold transition-colors">
+                        <Instagram size={20} />
+                      </a>
+                    )}
+                    {member.socials.whatsapp && (
+                      <a href={member.socials.whatsapp} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold transition-colors">
+                        <MessageCircle size={20} />
+                      </a>
+                    )}
+                    {member.socials.gmail && (
+                      <a href={member.socials.gmail} className="text-white hover:text-gold transition-colors">
+                        <Mail size={20} />
+                      </a>
+                    )}
+                    {member.socials.linkedin && (
+                      <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold transition-colors">
+                        <Linkedin size={20} />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <div className="text-center">
+                <h3 className="text-2xl font-serif mb-2 group-hover:text-gold transition-colors duration-500">{member.name}</h3>
+                <p className="text-gold text-[10px] uppercase tracking-widest font-bold mb-4">{member.role}</p>
+                <p className="text-theme-muted font-light leading-relaxed text-sm px-4">
+                  {member.bio}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const About = () => {
   return (
     <section id="about" className="py-24 bg-theme-section relative overflow-hidden">
@@ -654,16 +730,16 @@ const ContactUs = () => {
                 </div>
                 <div>
                   <h4 className="font-serif text-lg mb-1">Email</h4>
-                  <p className="text-theme-muted text-sm">hello@laceonak.com</p>
+                  <a href="mailto:hastyjoel1@gmail.com" className="text-theme-muted text-sm hover:text-gold transition-colors">hastyjoel1@gmail.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-gold/10 rounded-2xl text-gold">
-                  <Phone size={24} />
+                  <MessageCircle size={24} />
                 </div>
                 <div>
-                  <h4 className="font-serif text-lg mb-1">Phone</h4>
-                  <p className="text-theme-muted text-sm">+1 (555) 123-4567</p>
+                  <h4 className="font-serif text-lg mb-1">WhatsApp</h4>
+                  <a href="https://wa.me/256700000000" target="_blank" rel="noopener noreferrer" className="text-theme-muted text-sm hover:text-gold transition-colors">+256 700 000 000</a>
                 </div>
               </div>
             </div>
@@ -768,9 +844,11 @@ const Footer = () => {
               Preserving the elegance of history through authentic antique fashion. Join our community of vintage enthusiasts.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="text-gray-500 hover:text-gold transition-colors"><Instagram size={20} /></a>
-              <a href="#" className="text-gray-500 hover:text-gold transition-colors"><Facebook size={20} /></a>
-              <a href="#" className="text-gray-500 hover:text-gold transition-colors"><Twitter size={20} /></a>
+              <a href="https://instagram.com/laceonak" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gold transition-colors"><Instagram size={20} /></a>
+              <a href="https://facebook.com/laceonak" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gold transition-colors"><Facebook size={20} /></a>
+              <a href="https://linkedin.com/company/laceonak" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gold transition-colors"><Linkedin size={20} /></a>
+              <a href="https://wa.me/256700000000" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gold transition-colors"><MessageCircle size={20} /></a>
+              <a href="mailto:hastyjoel1@gmail.com" className="text-gray-500 hover:text-gold transition-colors"><Mail size={20} /></a>
             </div>
           </div>
           
@@ -870,6 +948,7 @@ export default function App() {
       <Hero />
       <Shop onImageClick={setSelectedItem} onAddToBag={addToBag} />
       <Services />
+      <Team />
       <About />
       <ContactUs />
       <Footer />

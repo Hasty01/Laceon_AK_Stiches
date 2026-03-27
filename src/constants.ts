@@ -234,6 +234,61 @@ export const COLLECTION: CollectionItem[] = [
   }
 ];
 
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  image: string;
+  bio: string;
+  socials: {
+    instagram?: string;
+    linkedin?: string;
+    whatsapp?: string;
+    gmail?: string;
+  };
+}
+
+export const TEAM: TeamMember[] = [
+  {
+    id: 't1',
+    name: 'Annet Kyomuhendo',
+    role: 'Founder & Creative Director',
+    image: 'https://picsum.photos/seed/annet/400/500',
+    bio: 'With over 15 years of experience in vintage restoration and bespoke tailoring, Annet leads our creative vision.',
+    socials: {
+      instagram: 'https://instagram.com/laceonak',
+      whatsapp: 'https://wa.me/256700000000',
+      gmail: 'mailto:annet@laceonak.com',
+      linkedin: 'https://linkedin.com/in/annetkyomuhendo'
+    }
+  },
+  {
+    id: 't2',
+    name: 'Joel Hasty',
+    role: 'Head of Operations',
+    image: 'https://picsum.photos/seed/joel/400/500',
+    bio: 'Joel ensures that every piece in our collection is meticulously curated and delivered with care.',
+    socials: {
+      instagram: 'https://instagram.com/hastyjoel',
+      whatsapp: 'https://wa.me/256700000001',
+      gmail: 'mailto:hastyjoel1@gmail.com',
+      linkedin: 'https://linkedin.com/in/joelhasty'
+    }
+  },
+  {
+    id: 't3',
+    name: 'Sarah Namuli',
+    role: 'Master Tailor',
+    image: 'https://picsum.photos/seed/sarah/400/500',
+    bio: 'Sarah specializes in delicate lace restoration and intricate beadwork, bringing history back to life.',
+    socials: {
+      instagram: 'https://instagram.com/sarahstiches',
+      whatsapp: 'https://wa.me/256700000002',
+      gmail: 'mailto:sarah@laceonak.com'
+    }
+  }
+];
+
 export const SERVICES = [
   {
     title: "Bespoke Tailoring",
