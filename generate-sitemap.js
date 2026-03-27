@@ -1,48 +1,43 @@
-import { SitemapStream, streamToPromise } from "sitemap";
-import { writeFileSync } from "fs";
+import { SitemapStream, streamToPromise } from 'sitemap';
+import { writeFileSync, readFileSync } from 'fs';
 
-const hostname = "https://laceon-ak-stiches.vercel.app";
-
-// List of static pages
-const staticPages = [
-  { url: "/", priority: 1.0 },
-  { url: "/about-us", priority: 0.8 },
-  { url: "/shop", priority: 0.9 },
-  { url: "/contact", priority: 0.7 },
-  { url: "/feedback", priority: 0.6 },
-];
-
-// If you later add products, list them here
-const products = [
-  { slug: "victorian-lace-dress" },
-  { slug: "edwardian-silk-blouse" },
-  { slug: "1920s-vintage-black-gown" },
-];
-
+const hostname = 'https://laceon-ak-stiches.vercel.app';
 const sitemap = new SitemapStream({ hostname });
 
+// Static pages
+const staticPages = [
+  { url: '/', changefreq: 'weekly', priority: 1.0 },        // Home
+  { url: '/collection', changefreq: 'weekly', priority: 0.9 },
+  { url: '/services', changefreq: 'monthly', priority: 0.8 },
+  { url: '/team', changefreq: 'monthly', priority: 0.7 },
+  { url: '/about', changefreq: 'monthly', priority: 0.8 },
+  { url: '/contact', changefreq: 'monthly', priority: 0.7 }
+];
+
 // Add static pages
-staticPages.forEach((page) =>
-  sitemap.write({
-    url: page.url,
-    changefreq: "weekly",
-    priority: page.priority,
-  })
-);
+staticPages.forEach(page => sitemap.write(page));
+
+// Read products from JSON
+let products = [];
+try {
+  products = JSON.parse(readFileSync('./src/products.json', 'utf-8'));
+} catch (e) {
+  console.log('No products.json found or empty. Skipping products.');
+}
 
 // Add product pages
-products.forEach((product) =>
+products.forEach(product => {
   sitemap.write({
-    url: `/shop/${product.slug}`,
-    changefreq: "weekly",
-    priority: 0.9,
-  })
-);
+    url: `/collection/${product.slug}`,  // assuming product pages are under /collection/
+    changefreq: 'weekly',
+    priority: 0.9
+  });
+});
 
 sitemap.end();
 
-// Output sitemap.xml to the public folder
-streamToPromise(sitemap).then((data) => {
-  writeFileSync("./public/sitemap.xml", data.toString());
-  console.log("Sitemap generated successfully!");
+// Output sitemap to public/
+streamToPromise(sitemap).then(data => {
+  writeFileSync('./public/sitemap.xml', data.toString());
+  console.log('Sitemap generated successfully!');
 });
