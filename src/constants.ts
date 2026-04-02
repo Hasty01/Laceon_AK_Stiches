@@ -20,7 +20,7 @@ export const COLLECTION: CollectionItem[] = [
     id: 'p1',
     name: 'Victorian Lace Gown',
     price: 350000,
-    image: 'https://picsum.photos/seed/vintage1/800/1200',
+    image: '',
     category: 'Gowns',
     description: 'A stunning authentic Victorian-era gown with intricate lace detailing.'
   },
@@ -68,7 +68,7 @@ export const COLLECTION: CollectionItem[] = [
     id: 'g1',
     name: "Royal Purple Elegance",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon1/800/1200",
+    image: "images/vi_b.jpg",
     category: "Evening Wear",
     description: "Exquisite royal purple gown for grand evening occasions."
   },
@@ -76,7 +76,7 @@ export const COLLECTION: CollectionItem[] = [
     id: 'g2',
     name: "Blush Pink Charm",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon2/800/1200",
+    image: "images/pitch_f.jpg",
     category: "Cocktail",
     description: "Delicate blush pink dress perfect for cocktail parties."
   },
@@ -84,7 +84,7 @@ export const COLLECTION: CollectionItem[] = [
     id: 'g3',
     name: "Azure Floral Front",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon3/800/1200",
+    image: "images/blue_m.jpg",
     category: "Day Wear",
     description: "Bright azure floral dress for elegant day outings."
   },
@@ -92,23 +92,23 @@ export const COLLECTION: CollectionItem[] = [
     id: 'g4',
     name: "Monochrome Patterns",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon4/800/1200",
+    image: "images/blv_f.jpg",
     category: "Modern",
     description: "Bold monochrome patterns for a contemporary vintage look."
   },
   {
     id: 'g5',
-    name: "Emerald Floral Accent",
+    name: "Gold Floral Accent",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon5/800/1200",
+    image: "images/gold.jpg",
     category: "Evening Wear",
-    description: "Deep emerald gown with beautiful floral accents."
+    description: "Deep gold gown with beautiful floral accents."
   },
   {
     id: 'g6',
     name: "Ivory Floral Grace",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon6/800/1200",
+    image: "images/flo.jpg",
     category: "Bridal",
     description: "Graceful ivory floral gown for the classic bride."
   },
@@ -116,39 +116,39 @@ export const COLLECTION: CollectionItem[] = [
     id: 'g7',
     name: "Crimson Statement",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon7/800/1200",
+    image: "images/flo_j.jpg",
     category: "Couture",
     description: "A bold crimson statement piece for high-fashion events."
   },
   {
     id: 'g8',
-    name: "Satin Forest Green",
+    name: "Satin Forest",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon8/800/1200",
+    image: "images/home.jpg",
     category: "Evening Wear",
-    description: "Luxurious forest green satin gown."
+    description: "Luxurious satin gown."
   },
   {
     id: 'g9',
     name: "Bridal Masterpiece",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon9/800/1200",
+    image: "images/bd.jpg",
     category: "Bridal",
     description: "A true masterpiece of bridal couture."
   },
   {
     id: 'g10',
-    name: "Sunset Gradient",
+    name: "Blue Gradient",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon10/800/1200",
+    image: "images/bg_f.jpg",
     category: "Modern",
-    description: "Vibrant sunset gradient dress."
+    description: "Vibrant gradient dress."
   },
   {
     id: 'g11',
     name: "Midnight Rose",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon11/800/1200",
+    image: "images/red_m.jpg",
     category: "Evening Wear",
     description: "Elegant midnight rose evening gown."
   },
@@ -156,7 +156,7 @@ export const COLLECTION: CollectionItem[] = [
     id: 'g12',
     name: "Ruby Geometric",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon12/800/1200",
+    image: "images/black_f.jpg",
     category: "Modern",
     description: "Ruby red dress with geometric patterns."
   },
@@ -164,7 +164,7 @@ export const COLLECTION: CollectionItem[] = [
     id: 'g13',
     name: "Pink Silk Gown",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon13/800/1200",
+    image: "images/pink.jpg",
     category: "Bridal",
     description: "Soft pink silk gown for a romantic look."
   },
@@ -172,7 +172,7 @@ export const COLLECTION: CollectionItem[] = [
     id: 'g14',
     name: "Purple Chiffon Group",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon14/800/1200",
+    image: "images/gng.jpg",
     category: "Evening Wear",
     description: "Flowing purple chiffon gown."
   },
@@ -180,7 +180,7 @@ export const COLLECTION: CollectionItem[] = [
     id: 'g15',
     name: "Lime Satin Grace",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon15/800/1200",
+    image: "images/dark_s.jpg",
     category: "Couture",
     description: "Unique lime green satin couture piece."
   },
@@ -188,7 +188,7 @@ export const COLLECTION: CollectionItem[] = [
     id: 'g16',
     name: "Golden Mustard Flow",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon16/800/1200",
+    image: "images/gold_m.jpg",
     category: "Day Wear",
     description: "Warm golden mustard flowing dress."
   },
@@ -196,7 +196,7 @@ export const COLLECTION: CollectionItem[] = [
     id: 'g17',
     name: "Green Monkey Print",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon17/800/1200",
+    image: "images/gr_m.jpg",
     category: "Modern",
     description: "Playful green monkey print dress."
   },
@@ -204,7 +204,7 @@ export const COLLECTION: CollectionItem[] = [
     id: 'g18',
     name: "Peach Lace Wrap",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon18/800/1200",
+    image: "images/pitch_m.jpg",
     category: "Accessories",
     description: "Delicate peach lace wrap."
   },
@@ -212,7 +212,7 @@ export const COLLECTION: CollectionItem[] = [
     id: 'g19',
     name: "Floral Cream Back",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon19/800/1200",
+    image: "images/fl_b.jpg",
     category: "Evening Wear",
     description: "Cream floral gown with stunning back detail."
   },
@@ -220,7 +220,7 @@ export const COLLECTION: CollectionItem[] = [
     id: 'g20',
     name: "Floral Cream Front",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon20/800/1200",
+    image: "images/fl_f.jpg",
     category: "Evening Wear",
     description: "Elegant front view of the cream floral gown."
   },
@@ -228,7 +228,7 @@ export const COLLECTION: CollectionItem[] = [
     id: 'g21',
     name: "Dusty Rose Flow",
     price: 350000,
-    image: "https://picsum.photos/seed/laceon21/800/1200",
+    image: "images/red_f.jpg",
     category: "Day Wear",
     description: "Soft dusty rose flowing day dress."
   }
@@ -266,7 +266,7 @@ export const TEAM: TeamMember[] = [
     id: 't2',
     name: 'Joel Hasty',
     role: 'Head of Operations',
-    image: 'images/joel.jpg',
+    image: '/images/joel.jpg',
     bio: 'Joel ensures that every piece in our collection is meticulously curated and delivered with care.',
     socials: {
       instagram: 'https://instagram.com/hastyjoel',
