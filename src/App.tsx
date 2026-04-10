@@ -972,3 +972,17 @@ export default function App() {
     </div>
   );
 }
+
+import Home from "./pages/Home";
+import Checkout from "./pages/Checkout";
+
+function App() {
+  return (
+    <>
+      <Home />
+      <Checkout />
+    </>
+  );
+}
+
+export default App;
