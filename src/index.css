@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap');
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-gold: #D4AF37;
+  --color-gold-light: #F9E29C;
+  --color-gold-dark: #996515;
+  
+  --color-paper: #FDFCFB;
+  --color-ink: #1A1A1A;
+  
+  --color-night: #050505;
+  --color-surface: #111111;
+  --color-slate-dark: #1A202C;
+  --color-slate-deep: #0F172A;
+}
+
+@layer base {
+  body {
+    @apply bg-paper text-ink font-sans transition-colors duration-700;
+  }
+  
+  .dark body {
+    @apply bg-night text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, var(--color-night) 0%, #1A1A1A 50%, var(--color-gold) 100%);
+}
+
+.gold-text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-gold via-gold-light to-gold;
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(to right, #D4AF37, #F9E29C, #D4AF37) 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Utilities for Theme-aware backgrounds */
+.bg-theme-card {
+  @apply bg-white border-slate-100 shadow-sm transition-all duration-500;
+}
+.dark .bg-theme-card {
+  @apply bg-surface border-gold/10 shadow-none;
+}
+
+.bg-theme-section {
+  @apply bg-[#F9F7F5] transition-colors duration-700;
+}
+.dark .bg-theme-section {
+  @apply bg-night;
+}
+
+.text-theme-muted {
+  @apply text-slate-500 transition-colors duration-500;
+}
+.dark .text-theme-muted {
+  @apply text-gray-400;
+}
+
+.border-theme {
+  @apply border-slate-200 transition-colors duration-500;
+}
+.dark .border-theme {
+  @apply border-gold/10;
+}
